@@ -49,7 +49,7 @@ int BinarySearch::binarysearch(int array[], int n, int d) {
 	int res = 0;
 
 	if (array[m] < d) {
-		res = binarysearch(&array[m+1], n-1-m, d);
+		res = binarysearch(&array[m+1], n-1-m, d) + m + 1;
 	} else if (array[m] == d) {
 		while(m > 0) {
 			--m;
@@ -74,7 +74,7 @@ void BinarySearch::print() {
 
 int main() {
 	BinarySearch bs(10);
-	int res = bs.find(4);
+	int res = bs.find(9);
 	cout << res << endl;
 	bs.print();
 }
